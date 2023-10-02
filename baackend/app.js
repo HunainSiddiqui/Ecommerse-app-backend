@@ -3,6 +3,7 @@ const errorMiddleware = require("./middleware/error");
 const cookieParser = require("cookie-parser")
 const fileUpload = require('express-fileupload');
 const app = express();
+const path = require("path");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()) ;
 app.use(cookieParser()) ;
@@ -20,7 +21,8 @@ app.use(
  
  const swaggerUi = require("swagger-ui-express");
  const YAML = require("yamljs");
- const swaggerDocument = YAML.load("/home/hunain/Desktop/E-commerse-Project/baackend/swagger.yaml");
+ const swaggerFilePath = path.join(__dirname, "swagger.yaml");
+ const swaggerDocument = YAML.load(swaggerFilePath);
  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
  
   

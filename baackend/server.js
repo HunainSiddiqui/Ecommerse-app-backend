@@ -15,15 +15,9 @@ process.on("uncaughtException", (err) => {
     process.exit(1);
   });
 
-const cloudinary = require('cloudinary').v2;
 
-  // Configuration 
-  cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_NAME,
-    api_key: process.env.CLOUDINARY_KEY,
-    api_secret: process.env.CLOUDINARY_SECERT
-  });
-  
+
+ 
   
  
   
@@ -44,6 +38,7 @@ process.on("unhandledRejection", (err) => {
     console.log(`Shutting down the server due to Unhandled Promise Rejection`);
   
     server.close(() => {
+      
       process.exit(1);
     });
   });
