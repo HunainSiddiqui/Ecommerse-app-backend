@@ -26,6 +26,7 @@ servers:
         enum:
           - localhost:4000
           - sampledevelompment.com
+          - ecommersebackend1.onrender.com
         default: localhost:4000
       protocol:
         enum:
