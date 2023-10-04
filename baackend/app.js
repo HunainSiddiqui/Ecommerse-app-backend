@@ -3,10 +3,12 @@ const errorMiddleware = require("./middleware/error");
 const cookieParser = require("cookie-parser")
 const fileUpload = require('express-fileupload');
 const app = express();
+const cors = require('cors');
 const path = require("path");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()) ;
 app.use(cookieParser()) ;
+app.use(cors());
 app.use(
     fileUpload({
       useTempFiles: true,
