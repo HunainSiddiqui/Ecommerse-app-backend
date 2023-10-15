@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json()) ;
 app.use(cookieParser()) ;
 app.use(cors({
-  origin: 'https://ecommersebackend1.onrender.com',
+  origin: '*',
   methods: 'GET,POST',
   credentials: true, // Include cookies in requests
 }));
