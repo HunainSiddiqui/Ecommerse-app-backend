@@ -10,7 +10,7 @@ app.use(express.json()) ;
 app.use(cookieParser()) ;
 app.use(cors({
   origin: ['http://localhost:3000', 'https://ecommersebackend1.onrender.com'],
-  methods: 'GET, POST,PUT,DELETESs',
+  methods: 'GET, POST,PUT,DELETE',
   credentials: true, // Include cookies in requests
 }));
 
