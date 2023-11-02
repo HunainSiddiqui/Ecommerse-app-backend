@@ -64,12 +64,20 @@ exports.getProductDetail = catchasyncError(async(req,res,next) =>{
 exports.getAllproducts = catchasyncError(async(req,res)=>{
     let resultperpage = 5 ;
     let productCount  = await Product.countDocuments();
-    const apifearture = new ApiFeatures(Product.find(),req.query).search().filter().pagination(resultperpage) ;
+    let apifearture = new ApiFeatures(Product.find(),req.query).search().filter() ;
     let products  = await apifearture.query;
+
+    let fiterproductcount = products.length ;
+ 
+    apifearture.pagination(resultperpage) ;
+
+     products  = await apifearture.query.clone();;
+    
    res.status(200).json({
     success : true,
     products,
-    productCount
+    productCount,
+    fiterproductcount,
 
 
    })
