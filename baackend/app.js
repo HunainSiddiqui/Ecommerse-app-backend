@@ -1,15 +1,18 @@
 const express = require('express');
+const Product = require("./models/productModel.js");
 const errorMiddleware = require("./middleware/error");
 const cookieParser = require("cookie-parser")
 const fileUpload = require('express-fileupload');
 const app = express();
 const cors = require('cors');
 const path = require("path");
+const { faker } = require('@faker-js/faker');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()) ;
 app.use(cookieParser()) ;
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://ecommersebackend1.onrender.com'],
+  origin: ['http://localhost:3000', 'https://ecommersebackend1.onrender.com','https://ecommerse-frontend-jji4.vercel.app'],
   methods: 'GET, POST,PUT,DELETE',
   credentials: true, // Include cookies in requests
 }));
@@ -44,6 +47,7 @@ app.use("/api/v1",product)
 app.use("/api/v1",user)
 app.use("/api/v1",order)
 app.use("/api/v1",payment)
+
 
 
 app.use(errorMiddleware);
