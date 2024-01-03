@@ -12,7 +12,7 @@ app.use(express.json()) ;
 app.use(cookieParser()) ;
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://ecommersebackend1.onrender.com','https://ecommerse-frontend-jji4.vercel.app'],
+  origin: ['http://localhost:3000', 'https://ecommersebackend1.onrender.com','https://ecommerse-frontend-jji4.vercel.app','https://cartcanvas.vercel.app'],
   methods: 'GET, POST,PUT,DELETE',
   credentials: true, // Include cookies in requests
 }));
