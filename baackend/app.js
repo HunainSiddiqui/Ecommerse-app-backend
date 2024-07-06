@@ -49,6 +49,11 @@ app.use("/api/v1",order)
 app.use("/api/v1",payment)
 
 
+app.get('/api/v1/wake-up', (req, res) => {
+  res.status(200).send('Server is awake!');
+});
+
+
 
 app.use(errorMiddleware);
 module.exports = app ;
