@@ -1,5 +1,5 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
-const Razorpay = require("razorpay");
+// const Razorpay = require("razorpay");
 const catchAsyncErrors = require("../middleware/catchasyncError");
 
 exports.sendStripeKey = catchAsyncErrors(async (req, res, next) => {

@@ -26,7 +26,8 @@ servers:
         enum:
           - localhost:4000
           - sampledevelompment.com
-          - ecommersebackend1.onrender.com
+          - ecommersebackend1..com
+          - cartcanvas-api.hunain.live
         default: localhost:4000
       protocol:
         enum:
